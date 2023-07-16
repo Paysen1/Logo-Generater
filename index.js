@@ -59,7 +59,7 @@ async function promptUser() {
     {
       type: 'input',
       name: 'textColor',
-      message: 'Enter text color (keyword or hexadecimal): ',
+      message: 'Enter text color: ',
     },
     {
       type: 'list',
@@ -70,7 +70,7 @@ async function promptUser() {
     {
       type: 'input',
       name: 'shapeColor',
-      message: 'Enter shape color (keyword or hexadecimal): ',
+      message: 'Enter shape color: ',
     },
   ]);
 
