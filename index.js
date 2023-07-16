@@ -100,7 +100,6 @@ async function runApplication() {
     console.error('An error occurred:', error);
   }
 }
-
 runApplication();
 
 function writeFile(svgContent) {
