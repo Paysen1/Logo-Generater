@@ -4,15 +4,26 @@ const inquirer = require('inquirer');
 class Circle {
   constructor() {
     this.color = '';
+    this.text = '';
+    this.textColor = '';
   }
 
   setColor(color) {
     this.color = color;
   }
 
+  setText(text) {
+    this.text = text;
+  }
+
+  setTextColor(color) {
+    this.textColor = color;
+  }
+
   render() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-      <circle cx="50" cy="50" r="40" fill="${this.color}" />
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+      <circle cx="100" cy="100" r="80" fill="${this.color}" />
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${this.textColor}">${this.text}</text>
     </svg>`;
   }
 }
@@ -20,15 +31,26 @@ class Circle {
 class Triangle {
   constructor() {
     this.color = '';
+    this.text = '';
+    this.textColor = '';
   }
 
   setColor(color) {
     this.color = color;
   }
 
+  setText(text) {
+    this.text = text;
+  }
+
+  setTextColor(color) {
+    this.textColor = color;
+  }
+
   render() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-      <polygon points="50,10 90,90 10,90" fill="${this.color}" />
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+      <polygon points="100,30 170,170 30,170" fill="${this.color}" />
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${this.textColor}">${this.text}</text>
     </svg>`;
   }
 }
@@ -36,15 +58,26 @@ class Triangle {
 class Square {
   constructor() {
     this.color = '';
+    this.text = '';
+    this.textColor = '';
   }
 
   setColor(color) {
     this.color = color;
   }
 
+  setText(text) {
+    this.text = text;
+  }
+
+  setTextColor(color) {
+    this.textColor = color;
+  }
+
   render() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-      <rect width="80" height="80" x="10" y="10" fill="${this.color}" />
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+      <polygon points="100,30 170,170 30,170" fill="${this.color}" />
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${this.textColor}">${this.text}</text>
     </svg>`;
   }
 }
@@ -91,6 +124,8 @@ async function runApplication() {
     }
 
     shape.setColor(userInput.shapeColor);
+    shape.setText(userInput.text);
+    shape.setTextColor(userInput.textColor);
 
     const svgContent = shape.render();
     await writeFile(svgContent);
