@@ -76,7 +76,7 @@ class Square {
 
   render() {
     return `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-      <polygon points="100,30 170,170 30,170" fill="${this.color}" />
+      <rect width="160" height="160" x="20" y="20" fill="${this.color}" />
       <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${this.textColor}">${this.text}</text>
     </svg>`;
   }
